@@ -28,13 +28,12 @@ def split_audio(audio_file, timestamps):
 
     segments.append(audio[start_time:])
 
-    # 导出每
     for i, segment in enumerate(segments):
         segment.export(f"anno/output_{i+1}.mp3", format="mp3")
 
 
-lrc_file = "あれくん; 『ユイカ』 - あのね。.lrc"  # LRC文件路径
-audio_file = "anone -3db_vocals_anon1.0_12key_sovits_rmvpe.wav"  # 音频文件路径
+lrc_file = "lrc_files/あれくん; 『ユイカ』 - あのね。.lrc"  # LRC文件
+audio_file = "audio_files/あれくん; 『ユイカ』 - あのね。.mp3"  # 音频文件
 
 timestamps = extract_timestamps_from_lrc(lrc_file)
 split_audio(audio_file, timestamps)
